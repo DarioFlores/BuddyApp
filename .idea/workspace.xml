@@ -17,25 +17,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+            <state relative-caret-position="174">
+              <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#987#1267#0" />
-                <element signature="e#1319#1423#0" />
-                <element signature="e#1321#1763#0" />
-                <element signature="e#1816#2251#0" />
-                <element signature="e#2314#2801#0" />
-                <element signature="e#2851#3719#0" />
-                <element signature="e#3770#3976#0" />
-                <element signature="e#4560#5086#0" />
-                <element signature="e#5118#5858#0" />
-                <element signature="e#5878#6035#0" />
-                <element signature="e#6061#6736#0" />
-                <element signature="e#6247#6736#0" />
-                <element signature="e#6760#7714#0" />
-                <element signature="e#8110#8582#0" />
-                <element signature="e#8616#9319#0" />
+                <element signature="e#1307#1411#0" />
+                <element signature="e#1465#1907#0" />
+                <element signature="e#1960#2395#0" />
+                <element signature="e#2458#2945#0" />
+                <element signature="e#3952#4158#0" />
+                <element signature="e#4268#4623#0" />
+                <element signature="e#5298#6038#0" />
+                <element signature="e#6058#6215#0" />
+                <element signature="e#6241#6942#0" />
+                <element signature="e#6453#6942#0" />
+                <element signature="e#8449#8919#0" />
+                <element signature="e#8964#10602#0" />
               </folding>
             </state>
           </provider>
@@ -79,7 +77,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -96,6 +93,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,7 +194,8 @@
       <workItem from="1559936510239" duration="11843000" />
       <workItem from="1559994291111" duration="9959000" />
       <workItem from="1560111720383" duration="2741000" />
-      <workItem from="1560114513991" duration="9477000" />
+      <workItem from="1560114513991" duration="13069000" />
+      <workItem from="1560168799569" duration="17402000" />
     </task>
     <task id="LOCAL-00001" summary="Configurando git">
       <created>1559953102229</created>
@@ -205,11 +204,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559953102229</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Listo para imprimir el vector libre y crear la memoria">
+      <created>1560127352164</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560127352164</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62779000" />
+    <option name="totallyTimeSpent" value="83773000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,7 +230,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1580938" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -302,12 +308,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Configurando git" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configurando git" />
+    <MESSAGE value="Listo para imprimir el vector libre y crear la memoria" />
+    <option name="LAST_COMMIT_MESSAGE" value="Listo para imprimir el vector libre y crear la memoria" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1559829354546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$Principal.coverage" NAME="Principal Coverage Results" MODIFIED="1559004764603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560126620602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560195160753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1259946107/PyQt5/QtCore/QObject.py" />
@@ -326,25 +333,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+        <state relative-caret-position="174">
+          <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#987#1267#0" />
-            <element signature="e#1319#1423#0" />
-            <element signature="e#1321#1763#0" />
-            <element signature="e#1816#2251#0" />
-            <element signature="e#2314#2801#0" />
-            <element signature="e#2851#3719#0" />
-            <element signature="e#3770#3976#0" />
-            <element signature="e#4560#5086#0" />
-            <element signature="e#5118#5858#0" />
-            <element signature="e#5878#6035#0" />
-            <element signature="e#6061#6736#0" />
-            <element signature="e#6247#6736#0" />
-            <element signature="e#6760#7714#0" />
-            <element signature="e#8110#8582#0" />
-            <element signature="e#8616#9319#0" />
+            <element signature="e#1307#1411#0" />
+            <element signature="e#1465#1907#0" />
+            <element signature="e#1960#2395#0" />
+            <element signature="e#2458#2945#0" />
+            <element signature="e#3952#4158#0" />
+            <element signature="e#4268#4623#0" />
+            <element signature="e#5298#6038#0" />
+            <element signature="e#6058#6215#0" />
+            <element signature="e#6241#6942#0" />
+            <element signature="e#6453#6942#0" />
+            <element signature="e#8449#8919#0" />
+            <element signature="e#8964#10602#0" />
           </folding>
         </state>
       </provider>

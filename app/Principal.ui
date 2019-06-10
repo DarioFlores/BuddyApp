@@ -256,14 +256,14 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="pushButtonAgregarMP">
            <property name="text">
             <string>Llevar a MP</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="pushButtonSacarMP">
            <property name="text">
             <string>Llevar a MS</string>
            </property>
