@@ -11,7 +11,7 @@ class MiVentana(QMainWindow):
         # Inciar el objeto QmainWindow
         QMainWindow.__init__(self)
         # Cargar la configuracion del archivo .ui en el objeto
-        uic.loadUi("Principal.ui", self)
+        uic.loadUi("app/Principal.ui", self)
         #Lista de procesos en memoria secundaria
         self.listaProcesos = _listaProcesos
         self.memoriaPrincipal = None
@@ -28,6 +28,9 @@ class MiVentana(QMainWindow):
             event.accept()
         else:
             event.ignore()
+
+    def finInstruccion(self):
+        self.plainTextEditAcciones.appendPlainText("\n######################################################\n")
 
     def validar_nombre_nuevo_proceso(self):
         nombre = self.lineNombreProceso.text()
@@ -79,6 +82,7 @@ class MiVentana(QMainWindow):
                 text = "Se agrego el proceso:"
                 self.plainTextEditAcciones.appendPlainText(text)
                 self.plainTextEditAcciones.appendPlainText(proceso.info())
+                self.finInstruccion()
             else:
                 QMessageBox.warning(self, "Formulario incorrecto", "Nombre Repetido", QMessageBox.Discard)
         else:
@@ -93,7 +97,12 @@ class MiVentana(QMainWindow):
     def nueva_memoria_principal(self):
         if self.validar_cabal_nuevo_memoria_principal():
             kval = self.lineEditCabalMemoriaPrincipal.text()
-            self.memoriaPrincipal = Particion('PRINCIPAL', kval, None)
+            proceso = Proceso('Libre', kval)
+            particion = Particion(kval, proceso, 0, None)
+            self.memoriaPrincipal = Memoria(particion)
+            text = self.memoriaPrincipal.imprimirVL()
+            self.plainTextEditAcciones.appendPlainText(text)
+            self.finInstruccion()
         else:
             QMessageBox.warning(self, "Formulario incorrecto", "Cabal tiene que ser Numerico", QMessageBox.Discard)
 
@@ -148,6 +157,34 @@ class ManejadorProcesos:
         return self.lista_procesos[i]
 
 
+class Dispo:
+    def __init__(self, dir, cabal):
+        self.dirCom = dir
+        self.cabal = cabal
+        self.punteroAnterior = None
+        self.punteroSiguiente = None
+
+
+class BloqueLibre:
+    def __init__(self, particion):
+        self.particion = particion
+        self.dispo = None
+        self.punteroAnterior = None
+        self.punteroSiguiente = None
+
+    @property
+    def imprimir(self):
+        if self.punteroAnterior and self.punteroSiguiente:
+            string = "+---------+-------+--------+---------+\n" \
+                     "| PunterA |  MAR  |  KVAL  | PunterA |\n" \
+                     "|---------+-------+--------+---------+\n" \
+                     "|                          +---------+\n" \
+                     "|                          | Dir. In |\n" \
+                     "+--------------------------+---------+"
+            return string
+        return False
+
+
 class Particion:
     def __init__(self, cabal, proceso, dirCom, particionPadre):
         self.cabal = cabal
@@ -156,6 +193,9 @@ class Particion:
         self.hijoIzquierdo = None
         self.hijoDerecho = None
         self.padre = particionPadre
+
+    def getCabalPar(self):
+        return self.proceso.getCabal()
 
     def tieneHijoIzquierdo(self):
         return self.hijoIzquierdo
@@ -182,164 +222,62 @@ class Particion:
         return self.hijoDerecho and self.hijoIzquierdo
 
 
-"""class ArbolBinarioBusqueda:
+class Memoria:
+    def __init__(self, particion):
+        self.vectorLibre = []
+        self.raiz = particion
+        self.crearVL(particion.cabal)
+#LISTOOO
+    def crearVL(self, cabal):
+        kval = int(cabal)
+        dircomienzo = 2 ** kval
+        i = 0
+        while i <= kval:
+            dir = dircomienzo+(2*i)
+            dispo = Dispo(dir, i)
+            if i == kval:
+                bloqueLibre = BloqueLibre(self.raiz)
+                dispo.punteroAnterior = bloqueLibre
+                dispo.punteroSiguiente = bloqueLibre
+                bloqueLibre.dispo = dispo
+            self.vectorLibre.append(dispo)
+            i = i + 1
 
-    def __init__(self):
-        self.raiz = None
-        self.tamano = 0
-
-    def longitud(self):
-        return self.tamano
-
-    def __len__(self):
-        return self.tamano
-
-    def agregar(self,clave,valor):
-        if self.raiz:
-            self._agregar(clave,valor,self.raiz)
-        else:
-            self.raiz = NodoArbol(clave,valor)
-        self.tamano = self.tamano + 1
-
-    def _agregar(self,clave,valor,nodoActual):
-        if clave < nodoActual.clave:
-            if nodoActual.tieneHijoIzquierdo():
-                   self._agregar(clave,valor,nodoActual.hijoIzquierdo)
-            else:
-                   nodoActual.hijoIzquierdo = NodoArbol(clave,valor,padre=nodoActual)
-        else:
-            if nodoActual.tieneHijoDerecho():
-                   self._agregar(clave,valor,nodoActual.hijoDerecho)
-            else:
-                   nodoActual.hijoDerecho = NodoArbol(clave,valor,padre=nodoActual)
-
-    def __setitem__(self,c,v):
-        self.agregar(c,v)
-
-    def obtener(self,clave):
-       if self.raiz:
-           res = self._obtener(clave,self.raiz)
-           if res:
-                  return res.cargaUtil
-           else:
-                  return None
-       else:
-           return None
-
-    def _obtener(self,clave,nodoActual):
-       if not nodoActual:
-           return None
-       elif nodoActual.clave == clave:
-           return nodoActual
-       elif clave < nodoActual.clave:
-           return self._obtener(clave,nodoActual.hijoIzquierdo)
-       else:
-           return self._obtener(clave,nodoActual.hijoDerecho)
-
-    def __getitem__(self,clave):
-       return self.obtener(clave)
-
-    def __contains__(self,clave):
-       if self._obtener(clave,self.raiz):
-           return True
-       else:
-           return False
-
-    def eliminar(self,clave):
-      if self.tamano > 1:
-         nodoAEliminar = self._obtener(clave,self.raiz)
-         if nodoAEliminar:
-             self.remover(nodoAEliminar)
-             self.tamano = self.tamano-1
-         else:
-             raise KeyError('Error, la clave no está en el árbol')
-      elif self.tamano == 1 and self.raiz.clave == clave:
-         self.raiz = None
-         self.tamano = self.tamano - 1
-      else:
-         raise KeyError('Error, la clave no está en el árbol')
-
-    def __delitem__(self,clave):
-       self.eliminar(clave)
-
-    def empalmar(self):
-       if self.esHoja():
-           if self.esHijoIzquierdo():
-                  self.padre.hijoIzquierdo = None
-           else:
-                  self.padre.hijoDerecho = None
-       elif self.tieneAlgunHijo():
-           if self.tieneHijoIzquierdo():
-                  if self.esHijoIzquierdo():
-                     self.padre.hijoIzquierdo = self.hijoIzquierdo
-                  else:
-                     self.padre.hijoDerecho = self.hijoIzquierdo
-                  self.hijoIzquierdo.padre = self.padre
-           else:
-                  if self.esHijoIzquierdo():
-                     self.padre.hijoIzquierdo = self.hijoDerecho
-                  else:
-                     self.padre.hijoDerecho = self.hijoDerecho
-                  self.hijoDerecho.padre = self.padre
-
-    def encontrarSucesor(self):
-        suc = None
-        if self.tieneHijoDerecho():
-            suc = self.hijoDerecho.encontrarMin()
-        else:
-            if self.padre:
-                 if self.esHijoIzquierdo():
-                     suc = self.padre
-                 else:
-                     self.padre.hijoDerecho = None
-                     suc = self.padre.encontrarSucesor()
-                     self.padre.hijoDerecho = self
-        return suc
-
-    def encontrarMin(self):
-        actual = self
-        while actual.tieneHijoIzquierdo():
-            actual = actual.hijoIzquierdo
-        return actual
-
-    def remover(self,nodoActual):
-        if nodoActual.esHoja(): #hoja
-            if nodoActual == nodoActual.padre.hijoIzquierdo:
-                nodoActual.padre.hijoIzquierdo = None
-            else:
-                nodoActual.padre.hijoDerecho = None
-        elif nodoActual.tieneAmbosHijos(): #interior
-            suc = nodoActual.encontrarSucesor()
-            suc.empalmar()
-            nodoActual.clave = suc.clave
-            nodoActual.cargaUtil = suc.cargaUtil
-
-        else: # este nodo tiene un (1) hijo
-            if nodoActual.tieneHijoIzquierdo():
-                if nodoActual.esHijoIzquierdo():
-                    nodoActual.hijoIzquierdo.padre = nodoActual.padre
-                    nodoActual.padre.hijoIzquierdo = nodoActual.hijoIzquierdo
-                elif nodoActual.esHijoDerecho():
-                    nodoActual.hijoIzquierdo.padre = nodoActual.padre
-                    nodoActual.padre.hijoDerecho = nodoActual.hijoIzquierdo
+        return True
+#LISTOOOO
+    def imprimirVL(self):
+        vl: list = self.vectorLibre
+        vectorLibre = "Vector Libre: \n"
+        for p in vl:
+            if p.cabal < 10:
+                if p.punteroAnterior is not None and p.punteroSiguiente is not None:  # TIENE 1 O MAS BLOQUES LIBRES
+                    string = "--|------" + str(p.dirCom) + "\n" \
+                             "  |---" + str(p.punteroAnterior.particion.direccionComienzo) + "\n" \
+                             " " + str(p.cabal) + "|--\n" \
+                             "  |---" + str(p.punteroSiguiente.particion.direccionComienzo) + "\n"
                 else:
-                    nodoActual.reemplazarDatoDeNodo(nodoActual.hijoIzquierdo.clave,
-                                    nodoActual.hijoIzquierdo.cargaUtil,
-                                    nodoActual.hijoIzquierdo.hijoIzquierdo,
-                                    nodoActual.hijoIzquierdo.hijoDerecho)
+                    string = "--|------" + str(p.dirCom) + "\n" \
+                             "  |---" + str(p.dirCom) + "\n" \
+                             " " + str(p.cabal) + "|--\n" \
+                             "  |---" + str(p.dirCom) + "\n"
             else:
-                if nodoActual.esHijoIzquierdo():
-                    nodoActual.hijoDerecho.padre = nodoActual.padre
-                    nodoActual.padre.hijoIzquierdo = nodoActual.hijoDerecho
-                elif nodoActual.esHijoDerecho():
-                    nodoActual.hijoDerecho.padre = nodoActual.padre
-                    nodoActual.padre.hijoDerecho = nodoActual.hijoDerecho
+                if p.punteroAnterior is not None and p.punteroSiguiente is not None:  # TIENE 1 O MAS BLOQUES LIBRES
+                    string = "--|------" + str(p.dirCom) + "\n" \
+                             "  |---" + str(p.punteroAnterior.particion.direccionComienzo) + "\n" \
+                             "" + str(p.cabal) + "|--\n" \
+                             "  |---" + str(p.punteroSiguiente.particion.direccionComienzo) + "\n"
                 else:
-                    nodoActual.reemplazarDatoDeNodo(nodoActual.hijoDerecho.clave,
-                                    nodoActual.hijoDerecho.cargaUtil,
-                                    nodoActual.hijoDerecho.hijoIzquierdo,
-                                    nodoActual.hijoDerecho.hijoDerecho)
-"""
+                    string = "--|------" + str(p.dirCom) + "\n" \
+                             "  |---" + str(p.dirCom) + "\n" \
+                             "" + str(p.cabal) + "|--\n" \
+                             "  |---" + str(p.dirCom) + "\n"
+
+            vectorLibre = vectorLibre + string
+
+        return vectorLibre
+
+
+
 
 # Instancia para iniciar la aplicacion
 app = QApplication(sys.argv)
