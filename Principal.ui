@@ -95,7 +95,7 @@
      <item>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
-        <string>Creacion de Memoria y Procesos</string>
+        <string>Asignacion de Memoria y Creacion de Procesos</string>
        </property>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
@@ -211,7 +211,7 @@
            <item>
             <widget class="QPushButton" name="pushButtonNuevaMemoria">
              <property name="text">
-              <string>Crear</string>
+              <string>Asignar</string>
              </property>
             </widget>
            </item>
@@ -360,5 +360,54 @@
  <resources>
   <include location="imgagen.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButtonNuevaMemoria</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEditCabalMemoriaPrincipal</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonAgregarNuevoProceso</sender>
+   <signal>clicked()</signal>
+   <receiver>lineNombreProceso</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>362</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonAgregarNuevoProceso</sender>
+   <signal>clicked()</signal>
+   <receiver>lineTamProceso</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>224</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

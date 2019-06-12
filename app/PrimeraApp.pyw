@@ -116,10 +116,10 @@ class MiVentana(QMainWindow, Ui_MainWindow):
             proceso = Proceso('Libre', kval)
             particion = Particion(kval, proceso, 0, None)
             self.memoriaPrincipal = Memoria(particion)
-            text = self.memoriaPrincipal.imprimirVL()
+            text = self.memoriaPrincipal.imprimirMemoria()
             self.plainTextEditAcciones.appendPlainText(text)
+            self.pushButtonNuevaMemoria.setEnabled(False)
             self.finInstruccion()
-            self.memoriaPrincipal.imprimirMemoria()
         else:
             QMessageBox.warning(self, "Formulario incorrecto", "Cabal tiene que ser Numerico", QMessageBox.Discard)
 
@@ -141,13 +141,12 @@ class MiVentana(QMainWindow, Ui_MainWindow):
             text = "Se llevo a Memoria Principal el proceso:"
             self.plainTextEditAcciones.appendPlainText(text)
             self.plainTextEditAcciones.appendPlainText(proceso.info())
+            text = self.memoriaPrincipal.imprimirMemoria()
+            self.plainTextEditAcciones.appendPlainText(text)
         else:
             text = "NO hay espacio disponible para el proceso:"
             self.plainTextEditAcciones.appendPlainText(text)
             self.plainTextEditAcciones.appendPlainText(proceso.info())
-        self.finInstruccion()
-        text = self.memoriaPrincipal.imprimirVL()
-        self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
         self.info_proceso_seleccionado()
 

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ddf35be-86c2-4ea9-9a68-e5677bae5126" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/PrimeraApp.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/app/PrimeraApp.pyw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="210">
+              <caret line="119" column="60" lean-forward="true" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#1313#1593#0" />
@@ -28,11 +30,9 @@
                 <element signature="e#2774#3261#0" />
                 <element signature="e#3311#4209#0" />
                 <element signature="e#4260#4742#0" />
-                <element signature="e#4791#5389#0" />
                 <element signature="e#5435#5568#0" />
                 <element signature="e#5619#5747#0" />
-                <element signature="e#5806#6593#0" />
-                <element signature="e#6650#7009#0" />
+                <element signature="e#5978#6751#0" />
                 <element signature="e#7032#7627#0" />
                 <element signature="e#7659#8623#0" />
                 <element signature="e#8643#11834#0" />
@@ -90,7 +90,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -238,7 +238,7 @@
       <workItem from="1560335930134" duration="8224000" />
       <workItem from="1560345015595" duration="348000" />
       <workItem from="1560345800519" duration="36000" />
-      <workItem from="1560346609766" duration="7558000" />
+      <workItem from="1560346609766" duration="8227000" />
     </task>
     <task id="LOCAL-00001" summary="Configurando git">
       <created>1559953102229</created>
@@ -282,11 +282,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560341967836</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ahora tiene Icono y una Imagen">
+      <created>1560358973269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560358973269</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137503000" />
+    <option name="totallyTimeSpent" value="138172000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -298,15 +305,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34065935" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16414523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298731" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.3156146" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.31096563" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4053156" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -384,12 +390,13 @@
     <MESSAGE value="cambio brusco. falta sacar un proceso" />
     <MESSAGE value="saca y mete perfecto listoooooooo&#10;faltan algunos retoques" />
     <MESSAGE value="Cambien la creacion de un proceso:&#10;     ahora se ingresa el tamanio en vez del cabal&#10;     &#10;     probe un ejercicio que nos dieron en la practica de la catedra y funciono muy bien &#10;     , es mas me di cuenta que estaba mal el ejercicio que habia hecho" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambien la creacion de un proceso:&#10;     ahora se ingresa el tamanio en vez del cabal&#10;     &#10;     probe un ejercicio que nos dieron en la practica de la catedra y funciono muy bien &#10;     , es mas me di cuenta que estaba mal el ejercicio que habia hecho" />
+    <MESSAGE value="Ahora tiene Icono y una Imagen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ahora tiene Icono y una Imagen" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1559829354546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$Principal.coverage" NAME="Principal Coverage Results" MODIFIED="1559004764603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560358939248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560358999907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1259946107/PyQt5/QtCore/QObject.py" />
@@ -430,8 +437,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        <state relative-caret-position="210">
+          <caret line="119" column="60" lean-forward="true" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#1313#1593#0" />
@@ -441,11 +448,9 @@
             <element signature="e#2774#3261#0" />
             <element signature="e#3311#4209#0" />
             <element signature="e#4260#4742#0" />
-            <element signature="e#4791#5389#0" />
             <element signature="e#5435#5568#0" />
             <element signature="e#5619#5747#0" />
-            <element signature="e#5806#6593#0" />
-            <element signature="e#6650#7009#0" />
+            <element signature="e#5978#6751#0" />
             <element signature="e#7032#7627#0" />
             <element signature="e#7659#8623#0" />
             <element signature="e#8643#11834#0" />
