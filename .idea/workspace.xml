@@ -4,6 +4,7 @@
     <list default="true" id="3ddf35be-86c2-4ea9-9a68-e5677bae5126" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/PrimeraApp.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/app/PrimeraApp.pyw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/app/Principal.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +17,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="377" column="30" selection-start-line="377" selection-start-column="30" selection-end-line="377" selection-end-column="30" />
+            <state relative-caret-position="106">
+              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#1313#1593#0" />
+                <element signature="e#1633#1737#0" />
+                <element signature="e#1791#2233#0" />
+                <element signature="e#2286#2721#0" />
+                <element signature="e#2784#3271#0" />
+                <element signature="e#4278#4760#0" />
+                <element signature="e#8355#10450#0" />
+                <element signature="e#10476#11580#0" />
+                <element signature="e#12619#14250#0" />
                 <element signature="e#14477#14826#0" />
                 <element signature="e#14872#16438#0" />
                 <element signature="e#16488#16703#0" />
@@ -62,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -71,25 +81,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BuddyApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BuddyApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BuddyApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BuddyApp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="directory" />
@@ -196,7 +188,7 @@
       <workItem from="1560168799569" duration="17610000" />
       <workItem from="1560207703120" duration="12601000" />
       <workItem from="1560256631453" duration="24755000" />
-      <workItem from="1560335930134" duration="4234000" />
+      <workItem from="1560335930134" duration="5800000" />
     </task>
     <task id="LOCAL-00001" summary="Configurando git">
       <created>1559953102229</created>
@@ -226,11 +218,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560307594391</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="saca y mete perfecto listoooooooo&#10;faltan algunos retoques">
+      <created>1560340206147</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560340206147</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125571000" />
+    <option name="totallyTimeSpent" value="127137000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -242,7 +241,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3419062" />
@@ -250,8 +249,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298731" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.3207856" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39770868" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.320598" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40840337" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -326,12 +325,13 @@
     <MESSAGE value="Listo para imprimir el vector libre y crear la memoria" />
     <MESSAGE value="Agrega perfecto a memoria principal" />
     <MESSAGE value="cambio brusco. falta sacar un proceso" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio brusco. falta sacar un proceso" />
+    <MESSAGE value="saca y mete perfecto listoooooooo&#10;faltan algunos retoques" />
+    <option name="LAST_COMMIT_MESSAGE" value="saca y mete perfecto listoooooooo&#10;faltan algunos retoques" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1559829354546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$Principal.coverage" NAME="Principal Coverage Results" MODIFIED="1559004764603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560339757282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560341390395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1259946107/PyQt5/QtCore/QObject.py" />
@@ -350,10 +350,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="377" column="30" selection-start-line="377" selection-start-column="30" selection-end-line="377" selection-end-column="30" />
+        <state relative-caret-position="106">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#1313#1593#0" />
+            <element signature="e#1633#1737#0" />
+            <element signature="e#1791#2233#0" />
+            <element signature="e#2286#2721#0" />
+            <element signature="e#2784#3271#0" />
+            <element signature="e#4278#4760#0" />
+            <element signature="e#8355#10450#0" />
+            <element signature="e#10476#11580#0" />
+            <element signature="e#12619#14250#0" />
             <element signature="e#14477#14826#0" />
             <element signature="e#14872#16438#0" />
             <element signature="e#16488#16703#0" />

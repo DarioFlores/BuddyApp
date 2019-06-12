@@ -49,17 +49,17 @@ class MiVentana(QMainWindow):
             self.lineNombreProceso.setStyleSheet("border: 1px solid green;")
             return True
 
-    def validar_cabal_nuevo_proceso(self):
-        cabal = self.lineCabalProceso.text()
+    def validar_tam_nuevo_proceso(self):
+        cabal = self.lineTamProceso.text()
         validar = cabal.isdigit()
         if cabal == "":
-            self.lineCabalProceso.setStyleSheet("border: 1px solid yellow;")
+            self.lineTamProceso.setStyleSheet("border: 1px solid yellow;")
             return False
         elif not validar:
-            self.lineCabalProceso.setStyleSheet("border: 1px solid red;")
+            self.lineTamProceso.setStyleSheet("border: 1px solid red;")
             return False
         else:
-            self.lineCabalProceso.setStyleSheet("border: 1px solid green;")
+            self.lineTamProceso.setStyleSheet("border: 1px solid green;")
             return True
 
     def validar_cabal_nuevo_memoria_principal(self):
@@ -76,11 +76,11 @@ class MiVentana(QMainWindow):
             return True
 
     def validar_creacion_proceso(self):
-        if self.validar_nombre_nuevo_proceso() and self.validar_cabal_nuevo_proceso():
+        if self.validar_nombre_nuevo_proceso() and self.validar_tam_nuevo_proceso():
             nombre = self.lineNombreProceso.text()
-            cabal = self.lineCabalProceso.text()
+            tam = self.lineTamProceso.text()
             if self.listaProcesos.buscarRepiteNombre(nombre):
-                self.listaProcesos.agregarProceso(nombre, cabal)
+                self.listaProcesos.agregarProceso(nombre, tam)
                 proceso = self.listaProcesos.ultimoProceso()
                 self.comboBoxProcesos.addItem(proceso.getNombre())
                 text = "Se agrego el proceso:"
@@ -143,6 +143,7 @@ class MiVentana(QMainWindow):
         text = self.memoriaPrincipal.imprimirVL()
         self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
+        self.info_proceso_seleccionado()
 
     def sacar_proceso_memoria_principal(self):
         i = self.comboBoxProcesos.currentIndex()
@@ -152,6 +153,7 @@ class MiVentana(QMainWindow):
         text = self.memoriaPrincipal.imprimirVL()
         self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
+        self.info_proceso_seleccionado()
 
 
 class Proceso:
@@ -184,9 +186,17 @@ class ManejadorProcesos:
     def __init__(self):
         self.lista_procesos = []
 
-    def agregarProceso(self, nom, ca):
-        proceso = Proceso(nom, ca)
-        self.lista_procesos.append(proceso)
+    def agregarProceso(self, nom, tam):
+        validar = True
+        i = 0
+        while validar:
+            tamC = 2 ** i
+            if tamC >= int(tam):
+                proceso = Proceso(nom, i)
+                proceso._tam = tam
+                self.lista_procesos.append(proceso)
+                validar = False
+            i = i + 1
 
     def imprimirListaProcesos(self):
         return self.lista_procesos[0].getNombre() + " " + self.lista_procesos[0].getCabal()
@@ -325,35 +335,6 @@ class BloqueLibre:
                      "+--------------------------+---------+"
             return string
         return False
-"""
-    def eliminarBL(self, particion):
-        if self.particion == particion:
-            self.ocuparBL()
-        else:
-            self._eliminarBL(self.punteroSiguiente, particion)
-
-    def _eliminarBL(self, bloqueLibre, particion):
-        if bloqueLibre.particion == particion:
-            self.punteroSiguiente = bloqueLibre.punteroSiguiente
-            bloqueLibre.punteroSiguiente.punteroAnterior = self
-            bloqueLibre.dispo = None
-        else:
-            bloqueLibre._eliminarBL(bloqueLibre.punteroSiguiente, particion)
-
-    def ocuparBL(self):
-        dispo = self.dispo
-        if self.punteroSiguiente is None:
-            dispo.punteroSiguiente = None
-            dispo.punteroAnterior = None
-            self.dispo = None
-        else:
-            siguiente = self.punteroSiguiente
-            dispo.punteroSiguiente = siguiente
-            siguiente.punteroAnterir = None
-            self.dispo = None
-            self.punteroSiguiente = None
-            self.punteroAnterior = None
-"""
 
 
 class Particion:
