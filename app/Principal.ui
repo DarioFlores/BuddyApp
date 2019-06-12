@@ -36,9 +36,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>160</y>
+      <y>190</y>
       <width>521</width>
-      <height>421</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="title">
@@ -50,7 +50,7 @@
        <x>0</x>
        <y>20</y>
        <width>521</width>
-       <height>401</height>
+       <height>371</height>
       </rect>
      </property>
      <property name="font">
@@ -70,7 +70,7 @@
       <x>0</x>
       <y>0</y>
       <width>521</width>
-      <height>151</height>
+      <height>191</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -79,17 +79,80 @@
        <property name="title">
         <string>Creacion de Memoria y Procesos</string>
        </property>
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QWidget" name="">
         <property name="geometry">
          <rect>
-          <x>9</x>
-          <y>20</y>
+          <x>10</x>
+          <y>110</y>
           <width>241</width>
-          <height>121</height>
+          <height>73</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0" colspan="3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Proceso:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Nombre:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="QLineEdit" name="lineNombreProceso"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Cabal:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineCabalProceso"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QPushButton" name="pushButtonAgregarNuevoProceso">
+           <property name="text">
+            <string>Agregar</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>21</y>
+          <width>241</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0" colspan="2">
           <widget class="QLabel" name="label">
            <property name="font">
             <font>
@@ -99,7 +162,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Tamaño de Memoria</string>
+            <string>Memoria:</string>
            </property>
           </widget>
          </item>
@@ -118,63 +181,23 @@
          <item row="1" column="1">
           <widget class="QLineEdit" name="lineEditCabalMemoriaPrincipal"/>
          </item>
-         <item row="1" column="2" rowspan="2">
-          <widget class="QPushButton" name="pushButtonNuevaMemoria">
-           <property name="text">
-            <string>Crear</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0" colspan="2">
-          <widget class="QLabel" name="label_4">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Proceso:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Nombre:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1" colspan="2">
-          <widget class="QLineEdit" name="lineNombreProceso"/>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="font">
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Cabal:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="lineCabalProceso"/>
-         </item>
-         <item row="4" column="2">
-          <widget class="QPushButton" name="pushButtonAgregarNuevoProceso">
-           <property name="text">
-            <string>Agregar</string>
-           </property>
-          </widget>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="pushButtonMostrar">
+             <property name="text">
+              <string>Mostrar</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButtonNuevaMemoria">
+             <property name="text">
+              <string>Crear</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>
@@ -191,7 +214,7 @@
           <x>10</x>
           <y>20</y>
           <width>241</width>
-          <height>121</height>
+          <height>91</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
@@ -257,6 +280,9 @@
          </item>
          <item row="1" column="1">
           <widget class="QPushButton" name="pushButtonAgregarMP">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="text">
             <string>Llevar a MP</string>
            </property>
@@ -271,6 +297,39 @@
          </item>
          <item row="0" column="0" colspan="2">
           <widget class="QComboBox" name="comboBoxProcesos"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>241</width>
+          <height>47</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Vector Libre:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonInfoVL">
+           <property name="text">
+            <string>Informacion</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>

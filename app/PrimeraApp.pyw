@@ -21,6 +21,9 @@ class MiVentana(QMainWindow):
         self.comboBoxProcesos.currentIndexChanged.connect(self.info_proceso_seleccionado)
         self.pushButtonNuevaMemoria.clicked.connect(self.nueva_memoria_principal)
         self.pushButtonAgregarMP.clicked.connect(self.agregar_proceso_memoria_principal)
+        self.pushButtonSacarMP.clicked.connect(self.sacar_proceso_memoria_principal)
+        self.pushButtonMostrar.clicked.connect(self.mostrar_info_memoria)
+        self.pushButtonInfoVL.clicked.connect(self.mostrar_info_vector_libre)
 
     def closeEvent(self, event):
         resultado = QMessageBox.question(self, "Salir...", "¿Seguro que quieres salir de la aplicacion",
@@ -94,6 +97,12 @@ class MiVentana(QMainWindow):
         proceso = self.listaProcesos.buscarXindice(i)
         self.labelInfoCabal.setText(proceso.getCabal())
         self.labelInfoTam.setText(proceso.getTamanio())
+        if proceso.esta_en_memoria_principal():
+            self.pushButtonAgregarMP.setEnabled(False)
+            self.pushButtonSacarMP.setEnabled(True)
+        else:
+            self.pushButtonAgregarMP.setEnabled(True)
+            self.pushButtonSacarMP.setEnabled(False)
 
     def nueva_memoria_principal(self):
         if self.validar_cabal_nuevo_memoria_principal():
@@ -104,17 +113,44 @@ class MiVentana(QMainWindow):
             text = self.memoriaPrincipal.imprimirVL()
             self.plainTextEditAcciones.appendPlainText(text)
             self.finInstruccion()
+            self.memoriaPrincipal.imprimirMemoria()
         else:
             QMessageBox.warning(self, "Formulario incorrecto", "Cabal tiene que ser Numerico", QMessageBox.Discard)
+
+    def mostrar_info_memoria(self):
+        text = self.memoriaPrincipal.imprimirMemoria()
+        self.plainTextEditAcciones.appendPlainText(text)
+        self.finInstruccion()
+
+    def mostrar_info_vector_libre(self):
+        text = self.memoriaPrincipal.imprimirVL()
+        self.plainTextEditAcciones.appendPlainText(text)
+        self.finInstruccion()
 
     def agregar_proceso_memoria_principal(self):
         i = self.comboBoxProcesos.currentIndex()
         proceso = self.listaProcesos.buscarXindice(i)
-        print("accion" + proceso._nombre)
-        self.memoriaPrincipal.agregar(proceso)
-        text = "Se llevo a Memoria Principal el proceso:"
+        print(proceso.info())
+        if self.memoriaPrincipal.agregar(proceso):
+            text = "Se llevo a Memoria Principal el proceso:"
+            self.plainTextEditAcciones.appendPlainText(text)
+            self.plainTextEditAcciones.appendPlainText(proceso.info())
+        else:
+            text = "NO hay espacio disponible para el proceso:"
+            self.plainTextEditAcciones.appendPlainText(text)
+            self.plainTextEditAcciones.appendPlainText(proceso.info())
+        self.finInstruccion()
+        text = self.memoriaPrincipal.imprimirVL()
         self.plainTextEditAcciones.appendPlainText(text)
-        self.plainTextEditAcciones.appendPlainText(proceso.info())
+        self.finInstruccion()
+
+    def sacar_proceso_memoria_principal(self):
+        i = self.comboBoxProcesos.currentIndex()
+        proceso = self.listaProcesos.buscarXindice(i)
+        print("accion" + proceso._nombre)
+        self.memoriaPrincipal.sacar(proceso)
+        text = self.memoriaPrincipal.imprimirVL()
+        self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
 
 
@@ -124,6 +160,12 @@ class Proceso:
         self._nombre = nombre
         self._cabal = cabal
         self._tam = 2 ** int(cabal)
+        self.particion = None
+
+    def esta_en_memoria_principal(self):
+        if self.particion is None:
+            return False
+        return True
 
     def getNombre(self):
         return str(self._nombre)
@@ -169,16 +211,115 @@ class Dispo:
     def __init__(self, dir, cabal):
         self.dirCom = dir
         self.cabal = cabal
-        self.punteroAnterior = None
-        self.punteroSiguiente = None
+        self.ultimo = None
+        self.primero = None
+
+    def agregar_al_final(self, particion):
+        nuevo = BloqueLibre(particion, self)
+        if self.getVacio():
+            self.primero = nuevo
+            self.ultimo = nuevo
+        else:
+            self.ultimo.ps = nuevo
+            nuevo.pa = self.ultimo
+            self.ultimo = nuevo
+
+    def eliminarPrimero(self):
+        if self.getVacio():
+            print("Lista Vacia. Imposible eliminar")
+        elif self.primero == self.ultimo:
+            self.primero = None
+            self.ultimo = None
+            print("Elemento eliminado. La lista esta vacia")
+        else:
+            temp = self.primero
+            self.primero = self.primero.ps
+            self.primero.pa = None
+            temp = None
+            print("Elemento eliminado")
+
+    def eliminar(self, particion):
+        if self.getVacio():
+            print("Lista Vacia. Imposible eliminar")
+        elif self.primero == self.ultimo and self.primero.particion == particion:
+            self.primero = None
+            self.ultimo = None
+            print("Elemento eliminado. La lista esta vacia")
+        else:
+            validar = True
+            temp = self.primero
+            while validar:
+                if temp.particion == particion:
+                    temp.pa.ps = temp.ps
+                    temp.ps.pa = temp.pa
+                    temp = None
+                    validar = False
+                    print("Elemento eliminado")
+                else:
+                    temp = temp.ps
+
+    def imprimir(self):
+        if self.getVacio():
+            print("Lista Vacia")
+        else:
+            validar = True
+            temp = self.primero
+            while validar:
+                print(temp.getParticion())
+                if temp == self.ultimo:
+                    validar = False
+                else:
+                    temp = temp.ps
+
+    def getVacio(self):
+        if self.primero is None:
+            return True
+        return False
 
 
 class BloqueLibre:
     def __init__(self, particion, dispo):
         self.particion = particion
         self.dispo = dispo
-        self.punteroAnterior = None
-        self.punteroSiguiente = None
+        self.pa = None
+        self.ps = None
+
+    def getParticion(self):
+        text = str(self.particion.proceso.info())
+        if self.ps is None:
+            text = text + " - PS: " + str(self.dispo.dirCom)
+        else:
+            text = text + " - PS: " + str(self.ps.particion.direccionComienzo)
+        if self.pa is None:
+            text = text + " - PA: " + str(self.dispo.dirCom)
+        else:
+            text = text + " - PA: " + str(self.pa.particion.direccionComienzo)
+        return text
+
+    def imprimir(self):
+        if self.pa and self.ps:
+            string = "+---------+-------+--------+---------+\n" \
+                     "| PunterA |  MAR  |  KVAL  | PunterA |\n" \
+                     "|---------+-------+--------+---------+\n" \
+                     "|                          +---------+\n" \
+                     "|                          | Dir. In |\n" \
+                     "+--------------------------+---------+"
+            return string
+        return False
+"""
+    def eliminarBL(self, particion):
+        if self.particion == particion:
+            self.ocuparBL()
+        else:
+            self._eliminarBL(self.punteroSiguiente, particion)
+
+    def _eliminarBL(self, bloqueLibre, particion):
+        if bloqueLibre.particion == particion:
+            self.punteroSiguiente = bloqueLibre.punteroSiguiente
+            bloqueLibre.punteroSiguiente.punteroAnterior = self
+            bloqueLibre.dispo = None
+        else:
+            bloqueLibre._eliminarBL(bloqueLibre.punteroSiguiente, particion)
 
     def ocuparBL(self):
         dispo = self.dispo
@@ -193,18 +334,7 @@ class BloqueLibre:
             self.dispo = None
             self.punteroSiguiente = None
             self.punteroAnterior = None
-
-    @property
-    def imprimir(self):
-        if self.punteroAnterior and self.punteroSiguiente:
-            string = "+---------+-------+--------+---------+\n" \
-                     "| PunterA |  MAR  |  KVAL  | PunterA |\n" \
-                     "|---------+-------+--------+---------+\n" \
-                     "|                          +---------+\n" \
-                     "|                          | Dir. In |\n" \
-                     "+--------------------------+---------+"
-            return string
-        return False
+"""
 
 
 class Particion:
@@ -224,6 +354,17 @@ class Particion:
         self.proceso = None
         self.hijoIzquierdo = Particion(nuevoKVAL, procesoLibre1, self.direccionComienzo, self)
         self.hijoDerecho = Particion(nuevoKVAL, procesoLibre2, dirSegundaParticion, self)
+
+    def libre(self):
+        if self.proceso.getNombre() == 'Libre':
+            return True
+        return False
+
+    def matarHijos(self):
+        self.hijoDerecho.padre = None
+        self.hijoIzquierdo.padre = None
+        self.hijoIzquierdo = None
+        self.hijoDerecho = None
 
     def tieneHijoIzquierdo(self):
         return self.hijoIzquierdo
@@ -255,6 +396,7 @@ class Memoria:
         self.vectorLibre = []
         self.raiz = particion
         self.crearVL(particion.cabal)
+        self.postorden = []
 
 #LISTOOO
     def crearVL(self, cabal):
@@ -265,10 +407,9 @@ class Memoria:
             dir = dircomienzo+(2*i)
             dispo = Dispo(dir, i)
             if i == kval:
-                bloqueLibre = BloqueLibre(self.raiz, dispo)
-                dispo.punteroAnterior = bloqueLibre
-                dispo.punteroSiguiente = bloqueLibre
+                dispo.agregar_al_final(self.raiz)
             self.vectorLibre.append(dispo)
+            dispo.imprimir()
             i = i + 1
 
         return True
@@ -279,22 +420,22 @@ class Memoria:
         vectorLibre = "Vector Libre: \n"
         for p in vl:
             if p.cabal < 10:
-                if p.punteroAnterior is not None and p.punteroSiguiente is not None:  # TIENE 1 O MAS BLOQUES LIBRES
+                if p.ultimo is not None and p.primero is not None:  # TIENE 1 O MAS BLOQUES LIBRES
                     string = "--|------" + str(p.dirCom) + "\n" \
-                             "  |---" + str(p.punteroAnterior.particion.direccionComienzo) + "\n" \
+                             "  |---" + str(p.ultimo.particion.direccionComienzo) + "\n" \
                              " " + str(p.cabal) + "|--\n" \
-                             "  |---" + str(p.punteroSiguiente.particion.direccionComienzo) + "\n"
+                             "  |---" + str(p.primero.particion.direccionComienzo) + "\n"
                 else:
                     string = "--|------" + str(p.dirCom) + "\n" \
                              "  |---" + str(p.dirCom) + "\n" \
                              " " + str(p.cabal) + "|--\n" \
                              "  |---" + str(p.dirCom) + "\n"
             else:
-                if p.punteroAnterior is not None and p.punteroSiguiente is not None:  # TIENE 1 O MAS BLOQUES LIBRES
+                if p.ultimo is not None and p.primero is not None:  # TIENE 1 O MAS BLOQUES LIBRES
                     string = "--|------" + str(p.dirCom) + "\n" \
-                             "  |---" + str(p.punteroAnterior.particion.direccionComienzo) + "\n" \
+                             "  |---" + str(p.ultimo.particion.direccionComienzo) + "\n" \
                              "" + str(p.cabal) + "|--\n" \
-                             "  |---" + str(p.punteroSiguiente.particion.direccionComienzo) + "\n"
+                             "  |---" + str(p.primero.particion.direccionComienzo) + "\n"
                 else:
                     string = "--|------" + str(p.dirCom) + "\n" \
                              "  |---" + str(p.dirCom) + "\n" \
@@ -305,6 +446,25 @@ class Memoria:
 
         return vectorLibre
 
+    def recorridoPostorden(self, raiz):
+        if raiz is not None:
+            self.recorridoPostorden(raiz.hijoIzquierdo)
+            self.recorridoPostorden(raiz.hijoDerecho)
+            if raiz.proceso is not None:
+                self.postorden.append(raiz)
+
+    def imprimirMemoria(self):
+        self.postorden = []
+        self.recorridoPostorden(self.raiz)
+        text = "Memoria:\n"
+        tam = len(self.postorden)
+        print(tam)
+        for p in self.postorden:
+            text = text + "--|------ Dir. Com.: " + str(p.direccionComienzo) + "\n" \
+                       "  |-- " + p.proceso.info() + "\n"
+        text = text + "--|------ Dir. Com.: " + str(2 ** int(self.raiz.cabal)) + "\n"
+        return text
+
     def buscarDispo_kval(self, kval):
         for p in self.vectorLibre:
             if p.cabal == kval:
@@ -313,9 +473,8 @@ class Memoria:
     def tieneBloqueLibre(self, kval): #LA IDEA ES QUE DEVUELVA FALSE CUANDO NO TENGA Y TRUE CUANDO TENGA
         vl = self.vectorLibre
         for p in vl:
-            print(p.punteroSiguiente)
             if p.cabal >= kval:
-                if p.punteroAnterior is not None and p.punteroSiguiente is not None:
+                if p.ultimo is not None and p.primero is not None:
                     return True
 
         return False
@@ -325,40 +484,95 @@ class Memoria:
         vl = self.vectorLibre
         for p in vl:
             if p.cabal >= kval:
-                if p.punteroAnterior is not None and p.punteroSiguiente is not None:
-                    return p.punteroSiguiente
+                if p.ultimo is not None and p.primero is not None:
+                    return p.primero
 
     def agregar(self, proceso):
         kval = int(proceso.getCabal())
-        print("agregar" + str(kval))
+        print("agregar: " + str(kval))
         if self.tieneBloqueLibre(kval):
             print("tiene bloque libre")
             bloqueLibre = self.primerBloqueLibre(kval)
-            print(bloqueLibre.particion.proceso.getNombre())
+            print(bloqueLibre.particion.proceso._nombre)
             if int(bloqueLibre.particion.cabal) == kval:   #JUSTO TENEMOS UN BLOQUE LIBRE DEL MISMO KVAL
+                proceso.particion = bloqueLibre.particion
                 bloqueLibre.particion.proceso = proceso
-                bloqueLibre.ocuparBL()
+                print(bloqueLibre.particion.proceso.info())
+                bloqueLibre.dispo.eliminarPrimero()
             else:                                     #TENEMOS BLOQUE LIBRE PERO TENEDREMOS QUE DIVIDIR LAS PARTICIONES :(
                 self._agregar(bloqueLibre.dispo, proceso)
+
+            return True
         else:
-            print("NO HAY BLOQUES DISPONIBLES")
+            return False
 
     def _agregar(self, dispo, proceso):
-        dispo.punteroSiguiente.particion.dividirParticion()
-        dispoAnterior = self.buscarDispo_kval(dispo.cabal - 1)
-        particionLibre1 = dispo.punteroSiguiente.particion.hijoIzquierdo
-        particionLibre2 = dispo.punteroSiguiente.particion.hijoDerecho
-        bloqueLibre1 = BloqueLibre(particionLibre1, dispoAnterior)
-        bloqueLibre2 = BloqueLibre(particionLibre2, dispoAnterior)
-        dispoAnterior.punteroSiguiente = bloqueLibre1
-        dispoAnterior.punteroAnterior = bloqueLibre2
-        bloqueLibre1.punteroSiguiente = bloqueLibre2
-        bloqueLibre2.punteroAnterior = bloqueLibre1
-        dispo.punteroSiguiente.ocuparBL()
+        print('DIVISION DE BLOQUE LIBRE')
+        dispo.primero.particion.dividirParticion()                  #SE DIVIDE LA PARTICION PORQUE EL CABAL ES MAYOR DEL QUE REQUIERE EL PROCESO
+        print(dispo.cabal - 1)
+        dispoAnterior = self.buscarDispo_kval(dispo.cabal - 1)              #BUSCA LA DISPO QUE SE LE AGREGARAN BLOQUES LIBRES POR LA DIVICION DE LA PARTICION
+        particionLibre1 = dispo.primero.particion.hijoIzquierdo    #ASIGNACION DE LAS PARTICIONES QUE ESTAN LIBRES
+        particionLibre2 = dispo.primero.particion.hijoDerecho
+        dispoAnterior.agregar_al_final(particionLibre1)
+        dispoAnterior.agregar_al_final(particionLibre2)
+        #bloqueLibre1 = BloqueLibre(particionLibre1, dispoAnterior)          #CREACION DE LOS BLOQUES LIBRES QUE CONTIENEN LAS PARTICIONES LIBRES
+        #bloqueLibre2 = BloqueLibre(particionLibre2, dispoAnterior)
+        #dispoAnterior.primero = bloqueLibre1                       #SE LE ASIGNA A LA DISPO CON MENOR CABAL LOS NUEVOS BLOQUES LIBRES
+        #dispoAnterior.ultimo = bloqueLibre2
+        #bloqueLibre1.ps = bloqueLibre2                        #SE ACTUALIZAN LOS PUNTEROS DE LOS BLOQUES LIBRES DE LA DISPO CON MENOR CABAL
+        #bloqueLibre2.pa = bloqueLibre1
+        dispo.eliminarPrimero()                                   #OCUPA EL BLOQUE LIBRE QUE SE DIVIDIO
         self.agregar(proceso)
 
+    def sacar(self, proceso):
+        dispo = self.buscarDispo_kval(int(proceso._cabal))
+        particion = proceso.particion
+        particion.proceso._nombre = 'Libre'
+        particion.proceso.paricion = None
+        dispo.agregar_al_final(particion.proceso)
+        padre = particion.padre
+        if padre is not None:
+            if padre.hijoIzquierdo == particion:
+                if padre.hijoDerecho.libre():
+                    padre.hijoDerecho = None
+                    padre.hijoIzquierdo = None
+                    padre.proceso._nombre = 'Libre'
+                    padre.proceso.particion = padre
+            else:
+                if padre.hijoIzquierdo.libre():
+                    padre.hijoDerecho = None
+                    padre.hijoIzquierdo = None
+                    padre.proceso._nombre = 'Libre'
+                    padre.proceso.particion = padre
+        """
+        particion = proceso.paricion
+        particion.proceso._nombre = 'Libre'
+        particion.proceso.paricion = None
+        if particion.padre is None:
+            print(particion.cabal)
+            dispo = self.buscarDispo_kval(int(particion.cabal))
+            bloqueLibre = BloqueLibre(particion, dispo)
+            dispo.agregar_al_final(bloqueLibre)
+        else:
+            self.compactar(particion)
 
-
+    def compactar(self, particion):
+        padre = particion.padre
+        dispo = self.buscarDispo_kval(int(padre.cabal))
+        dispoMenor = self.buscarDispo_kval(int(padre.cabal) - 1)
+        if padre.hijoDerecho == self:
+            if padre.hijoIzquierdo.libre():
+                dispoMenor.punteroSiguiente.eliminarBL(padre.hijoIzquierdo)
+                bloqueLibre = BloqueLibre(padre, dispo)
+                dispo.agregar_al_final(bloqueLibre)
+                padre.matarHijos()
+        else:
+            if padre.hijoDerecho.libre():
+                dispoMenor.punteroSiguiente.eliminarBL(padre.hijoDerecho)
+                bloqueLibre = BloqueLibre(padre, dispo)
+                dispo.agregar_al_final(bloqueLibre)
+                padre.matarHijos()
+"""
 # Instancia para iniciar la aplicacion
 app = QApplication(sys.argv)
 # Crear un objeto de la clase
