@@ -238,6 +238,20 @@ class Dispo:
             temp = None
             print("Elemento eliminado")
 
+    def eliminarUltimo(self):
+        if self.getVacio():
+            print("Lista vacia. Imposible eliminar")
+        elif self.primero == self.ultimo:
+            self.primero = None
+            self.ultimo = None
+            print("Elemento eliminado. La lista esta vacia")
+        else:
+            temp = self.ultimo
+            self.ultimo = self.ultimo.pa
+            self.ultimo.ps = None
+            temp = None
+            print("Elemento eliminado")
+
     def eliminar(self, particion):
         if self.getVacio():
             print("Lista Vacia. Imposible eliminar")
@@ -250,9 +264,14 @@ class Dispo:
             temp = self.primero
             while validar:
                 if temp.particion == particion:
-                    temp.pa.ps = temp.ps
-                    temp.ps.pa = temp.pa
-                    temp = None
+                    if self.primero == temp:
+                        self.eliminarPrimero()
+                    elif self.ultimo == temp:
+                        self.eliminarUltimo()
+                    else:
+                        temp.pa.ps = temp.ps
+                        temp.ps.pa = temp.pa
+                        temp = None
                     validar = False
                     print("Elemento eliminado")
                 else:
@@ -356,8 +375,9 @@ class Particion:
         self.hijoDerecho = Particion(nuevoKVAL, procesoLibre2, dirSegundaParticion, self)
 
     def libre(self):
-        if self.proceso.getNombre() == 'Libre':
-            return True
+        if self.proceso is not None:
+            if self.proceso.getNombre() == 'Libre':
+                return True
         return False
 
     def matarHijos(self):
@@ -527,23 +547,29 @@ class Memoria:
     def sacar(self, proceso):
         dispo = self.buscarDispo_kval(int(proceso._cabal))
         particion = proceso.particion
-        particion.proceso._nombre = 'Libre'
-        particion.proceso.paricion = None
-        dispo.agregar_al_final(particion.proceso)
+        proceso.particion = None
+        procesoLibre = Proceso('Libre', int(proceso._cabal))
+        particion.proceso = procesoLibre
+        dispo.agregar_al_final(particion)
         padre = particion.padre
-        if padre is not None:
-            if padre.hijoIzquierdo == particion:
-                if padre.hijoDerecho.libre():
-                    padre.hijoDerecho = None
-                    padre.hijoIzquierdo = None
-                    padre.proceso._nombre = 'Libre'
-                    padre.proceso.particion = padre
-            else:
-                if padre.hijoIzquierdo.libre():
-                    padre.hijoDerecho = None
-                    padre.hijoIzquierdo = None
-                    padre.proceso._nombre = 'Libre'
-                    padre.proceso.particion = padre
+        self.compactar(padre)
+
+    def compactar(self, padre):
+
+        if padre is None:                   #ES EL NODO RAIZ
+            print('ES EL NODO RAIZ')
+        else:                               #NO ES EL NODO RAIZ ENOTONCES SEGUIMOS COMPROBANDO SI ES QUE SE PUEDE COMPACTAR
+            dispo = self.buscarDispo_kval(int(padre.cabal) - 1)
+            dispoMayor = self.buscarDispo_kval(int(padre.cabal))
+            if padre.hijoIzquierdo.libre() and padre.hijoDerecho.libre():
+                dispo.eliminar(padre.hijoDerecho)
+                padre.hijoDerecho = None
+                dispo.eliminar(padre.hijoIzquierdo)
+                padre.hijoIzquierdo = None
+                padre.proceso = Proceso('Libre', int(padre.cabal))
+                dispoMayor.agregar_al_final(padre)
+                self.compactar(padre.padre)
+
         """
         particion = proceso.paricion
         particion.proceso._nombre = 'Libre'
