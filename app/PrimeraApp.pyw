@@ -2,16 +2,22 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5 import uic
 
+qtCreatorFile = "Principal.ui"
+
+Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
+
 
 # clase heredada de QMainWindows (Constructor de ventanas)
-class MiVentana(QMainWindow):
+class MiVentana(QMainWindow, Ui_MainWindow):
 
     # Metodo contructor de la clase
     def __init__(self, _listaProcesos):
         # Inciar el objeto QmainWindow
         QMainWindow.__init__(self)
+        Ui_MainWindow.__init__(self)
+        self.setupUi(self)
         # Cargar la configuracion del archivo .ui en el objeto
-        uic.loadUi("app/Principal.ui", self)
+        #uic.loadUi("app/Principal.ui", self)
         #Lista de procesos en memoria secundaria
         self.listaProcesos = _listaProcesos
         self.memoriaPrincipal = None
@@ -123,7 +129,7 @@ class MiVentana(QMainWindow):
         self.finInstruccion()
 
     def mostrar_info_vector_libre(self):
-        text = self.memoriaPrincipal.imprimirVL()
+        text = self.memoriaPrincipal.imprimirBL()
         self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
 
@@ -291,14 +297,21 @@ class Dispo:
         if self.getVacio():
             print("Lista Vacia")
         else:
+            print("entra")
+            text = ""
+            text = "DISPO - " + str(self.dirCom) + "\n" \
+                          "+---------+--------+---------+"\
+	                      #"| "+str(self.primero.particion.direccionComienzo)+ "|  "+str(self.cabal)+"  | "+str(self.primero.particion.direccionComienzo)+" |"\
+	                      #"+---------+--------+---------+"
             validar = True
             temp = self.primero
             while validar:
-                print(temp.getParticion())
+                text = text + temp.getParticion()
                 if temp == self.ultimo:
                     validar = False
                 else:
                     temp = temp.ps
+            return text
 
     def getVacio(self):
         if self.primero is None:
@@ -580,6 +593,15 @@ class Memoria:
                 dispo.agregar_al_final(bloqueLibre)
                 padre.matarHijos()
 """
+
+    def imprimirBL(self):
+        text = "Bloques Libres:\n"
+        for p in self.vectorLibre:
+            text = text + str(p.imprimir())
+
+        return text
+
+
 # Instancia para iniciar la aplicacion
 app = QApplication(sys.argv)
 # Crear un objeto de la clase
