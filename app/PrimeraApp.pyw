@@ -93,6 +93,8 @@ class MiVentana(QMainWindow, Ui_MainWindow):
                 self.plainTextEditAcciones.appendPlainText(text)
                 self.plainTextEditAcciones.appendPlainText(proceso.info())
                 self.finInstruccion()
+                self.lineNombreProceso.clear()
+                self.lineTamProceso.clear()
             else:
                 QMessageBox.warning(self, "Formulario incorrecto", "Nombre Repetido", QMessageBox.Discard)
         else:
@@ -120,6 +122,7 @@ class MiVentana(QMainWindow, Ui_MainWindow):
             self.plainTextEditAcciones.appendPlainText(text)
             self.pushButtonNuevaMemoria.setEnabled(False)
             self.finInstruccion()
+            self.lineEditCabalMemoriaPrincipal.clear()
         else:
             QMessageBox.warning(self, "Formulario incorrecto", "Cabal tiene que ser Numerico", QMessageBox.Discard)
 
@@ -155,7 +158,10 @@ class MiVentana(QMainWindow, Ui_MainWindow):
         proceso = self.listaProcesos.buscarXindice(i)
         print("accion" + proceso._nombre)
         self.memoriaPrincipal.sacar(proceso)
-        text = self.memoriaPrincipal.imprimirVL()
+        text = "Se llevo a memoria secundaria el proceso:"
+        self.plainTextEditAcciones.appendPlainText(text)
+        self.plainTextEditAcciones.appendPlainText(proceso.info())
+        text = self.memoriaPrincipal.imprimirMemoria()
         self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
         self.info_proceso_seleccionado()
@@ -297,20 +303,20 @@ class Dispo:
             print("Lista Vacia")
         else:
             print("entra")
-            text = ""
-            text = "DISPO - " + str(self.dirCom) + "\n" \
-                          "+---------+--------+---------+"\
-	                      #"| "+str(self.primero.particion.direccionComienzo)+ "|  "+str(self.cabal)+"  | "+str(self.primero.particion.direccionComienzo)+" |"\
-	                      #"+---------+--------+---------+"
+            texto = ""
+            texto = "DISPO - DIR. COM.: " + str(self.dirCom) + "\n" \
+                    "--+-----" + str(self.primero.particion.direccionComienzo) + "\n"\
+	                "--+-- " + str(self.cabal) + "\n"\
+	                "--+----- " + str(self.primero.particion.direccionComienzo) + "\n"
             validar = True
             temp = self.primero
             while validar:
-                text = text + temp.getParticion()
+                texto = texto + temp.imprimir()
                 if temp == self.ultimo:
                     validar = False
                 else:
                     temp = temp.ps
-            return text
+            return texto
 
     def getVacio(self):
         if self.primero is None:
@@ -338,15 +344,19 @@ class BloqueLibre:
         return text
 
     def imprimir(self):
-        if self.pa and self.ps:
-            string = "+---------+-------+--------+---------+\n" \
-                     "| PunterA |  MAR  |  KVAL  | PunterA |\n" \
-                     "|---------+-------+--------+---------+\n" \
-                     "|                          +---------+\n" \
-                     "|                          | Dir. In |\n" \
-                     "+--------------------------+---------+"
-            return string
-        return False
+        string = "\tBloque Libre - DIR. COM.: " + str(self.particion.direccionComienzo) + "\n"
+        if self.pa is None:
+            string = string + "\t--+----- PA: " + str(self.dispo.dirCom) + "\n"
+        else:
+            string = string + "\t--+----- PA: " + str(self.pa.particion.direccionComienzo) + "\n"
+        string = string + "\t--+-- MAR: 0\n" \
+                          "\t--+-- KVAL: " + str(self.particion.cabal) + "\n"
+        if self.ps is None:
+            string = string + "\t--+----- PS: " + str(self.dispo.dirCom) + "\n"
+        else:
+            string = string + "\t--+----- PS: " + str(self.ps.particion.direccionComienzo) + "\n"
+
+        return string
 
 
 class Particion:
@@ -596,7 +606,8 @@ class Memoria:
     def imprimirBL(self):
         text = "Bloques Libres:\n"
         for p in self.vectorLibre:
-            text = text + str(p.imprimir())
+            if p.primero is not None:
+                text = text + str(p.imprimir())
 
         return text
 

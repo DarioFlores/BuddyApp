@@ -360,54 +360,5 @@
  <resources>
   <include location="imgagen.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>pushButtonNuevaMemoria</sender>
-   <signal>clicked()</signal>
-   <receiver>lineEditCabalMemoriaPrincipal</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>182</x>
-     <y>277</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>172</x>
-     <y>259</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButtonAgregarNuevoProceso</sender>
-   <signal>clicked()</signal>
-   <receiver>lineNombreProceso</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>211</x>
-     <y>362</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>204</x>
-     <y>340</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButtonAgregarNuevoProceso</sender>
-   <signal>clicked()</signal>
-   <receiver>lineTamProceso</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>224</x>
-     <y>361</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>155</x>
-     <y>363</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
