@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ddf35be-86c2-4ea9-9a68-e5677bae5126" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/PrimeraApp.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/app/PrimeraApp.pyw" afterDir="false" />
@@ -15,45 +13,84 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="119" column="60" lean-forward="true" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#1313#1593#0" />
-                <element signature="e#1633#1737#0" />
-                <element signature="e#1791#2233#0" />
-                <element signature="e#2284#2711#0" />
-                <element signature="e#2774#3261#0" />
-                <element signature="e#3311#4209#0" />
-                <element signature="e#4260#4742#0" />
-                <element signature="e#5435#5568#0" />
-                <element signature="e#5619#5747#0" />
-                <element signature="e#5978#6751#0" />
-                <element signature="e#7032#7627#0" />
-                <element signature="e#7659#8623#0" />
-                <element signature="e#8643#11834#0" />
-                <element signature="e#11860#12964#0" />
-                <element signature="e#12988#14664#0" />
-                <element signature="e#14686#23188#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Representacion de BuddyApp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="29" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4750378">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="621">
+                  <caret line="271" column="41" lean-forward="true" selection-start-line="270" selection-start-column="8" selection-end-line="271" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#0#10#0" expanded="true" />
+                    <element signature="e#1636#3754#0" />
+                    <element signature="e#3797#4077#0" />
+                    <element signature="e#4117#4221#0" />
+                    <element signature="e#4275#4717#0" />
+                    <element signature="e#4768#5195#0" />
+                    <element signature="e#5258#5745#0" />
+                    <element signature="e#5795#6784#0" />
+                    <element signature="e#8076#8209#0" />
+                    <element signature="e#8262#8390#0" />
+                    <element signature="e#8441#8569#0" />
+                    <element signature="e#8628#9398#0" />
+                    <element signature="e#9455#10002#0" />
+                    <element signature="e#10025#10620#0" />
+                    <element signature="e#11636#14803#0" />
+                    <element signature="e#14829#16145#0" />
+                    <element signature="e#16169#17845#0" />
+                    <element signature="e#17867#26411#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Representacion de BuddyApp.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="646">
+                  <caret line="38" selection-start-line="38" selection-end-line="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/BuddyApp.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="216">
+                  <caret line="478" column="41" selection-start-line="478" selection-start-column="41" selection-end-line="478" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#198#240#0" expanded="true" />
+                    <element signature="e#13623#15741#0" />
+                    <element signature="e#15784#16064#0" />
+                    <element signature="e#16104#16208#0" />
+                    <element signature="e#16262#16704#0" />
+                    <element signature="e#16755#17182#0" />
+                    <element signature="e#17245#17732#0" />
+                    <element signature="e#17782#18771#0" />
+                    <element signature="e#19353#20017#0" />
+                    <element signature="e#20063#20196#0" />
+                    <element signature="e#20249#20377#0" />
+                    <element signature="e#20428#20556#0" />
+                    <element signature="e#20615#21385#0" />
+                    <element signature="e#21442#21989#0" />
+                    <element signature="e#22185#22780#0" />
+                    <element signature="e#23796#26963#0" />
+                    <element signature="e#26989#28305#0" />
+                    <element signature="e#28329#30005#0" />
+                    <element signature="e#30027#36801#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,10 +124,11 @@
         <option value="$PROJECT_DIR$/PrimeraApp.pyw" />
         <option value="$PROJECT_DIR$/app/file.qrc" />
         <option value="$PROJECT_DIR$/app/PrimeraApp.pyw" />
+        <option value="$PROJECT_DIR$/BuddyApp.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -159,7 +197,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.PrimeraApp.pyw">
+  <component name="RunManager" selected="Python.BuddyApp">
+    <configuration name="BuddyApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BuddyApp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="PrimeraApp.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,6 +266,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.BuddyApp" />
         <item itemvalue="Python.PrimeraApp.pyw" />
       </list>
     </recent_temporary>
@@ -238,7 +299,8 @@
       <workItem from="1560335930134" duration="8224000" />
       <workItem from="1560345015595" duration="348000" />
       <workItem from="1560345800519" duration="36000" />
-      <workItem from="1560346609766" duration="8227000" />
+      <workItem from="1560346609766" duration="12671000" />
+      <workItem from="1560374770458" duration="7473000" />
     </task>
     <task id="LOCAL-00001" summary="Configurando git">
       <created>1559953102229</created>
@@ -289,11 +351,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560358973269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Imprimi bien todo">
+      <created>1560364097230</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560364097230</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138172000" />
+    <option name="totallyTimeSpent" value="150089000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,15 +374,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16414523" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16641453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.31096563" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4053156" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.31096563" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40425533" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -321,7 +391,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.32569557" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3372093" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3371522" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -391,12 +461,14 @@
     <MESSAGE value="saca y mete perfecto listoooooooo&#10;faltan algunos retoques" />
     <MESSAGE value="Cambien la creacion de un proceso:&#10;     ahora se ingresa el tamanio en vez del cabal&#10;     &#10;     probe un ejercicio que nos dieron en la practica de la catedra y funciono muy bien &#10;     , es mas me di cuenta que estaba mal el ejercicio que habia hecho" />
     <MESSAGE value="Ahora tiene Icono y una Imagen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ahora tiene Icono y una Imagen" />
+    <MESSAGE value="Imprimi bien todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imprimi bien todo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1559829354546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$Principal.coverage" NAME="Principal Coverage Results" MODIFIED="1559004764603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560358999907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$BuddyApp.coverage" NAME="BuddyApp Coverage Results" MODIFIED="1560385071536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1560384930346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1259946107/PyQt5/QtCore/QObject.py" />
@@ -406,13 +478,6 @@
     <entry file="file://$PROJECT_DIR$/ManejadorProcesos.py" />
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1259946107/builtins.py" />
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-1259946107/PyQt5/QtWidgets/QMainWindow.py" />
-    <entry file="file://$PROJECT_DIR$/app/Representacion de BuddyApp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/496645070/PyQt5/QtWidgets/QApplication.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -420,43 +485,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/file.qrc">
+    <entry file="file://$PROJECT_DIR$/app/file.qrc" />
+    <entry file="file://$PROJECT_DIR$/app/ico.jpeg" />
+    <entry file="file://$PROJECT_DIR$/app/img_rc.py" />
+    <entry file="file://$PROJECT_DIR$/app/Representacion de BuddyApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/ico.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/img_rc.py">
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/496645070/PyQt5/QtWidgets/QLineEdit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118123" />
+        <state relative-caret-position="126">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="119" column="60" lean-forward="true" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
+        <state relative-caret-position="621">
+          <caret line="271" column="41" lean-forward="true" selection-start-line="270" selection-start-column="8" selection-end-line="271" selection-end-column="41" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1313#1593#0" />
-            <element signature="e#1633#1737#0" />
-            <element signature="e#1791#2233#0" />
-            <element signature="e#2284#2711#0" />
-            <element signature="e#2774#3261#0" />
-            <element signature="e#3311#4209#0" />
-            <element signature="e#4260#4742#0" />
-            <element signature="e#5435#5568#0" />
-            <element signature="e#5619#5747#0" />
-            <element signature="e#5978#6751#0" />
-            <element signature="e#7032#7627#0" />
-            <element signature="e#7659#8623#0" />
-            <element signature="e#8643#11834#0" />
-            <element signature="e#11860#12964#0" />
-            <element signature="e#12988#14664#0" />
-            <element signature="e#14686#23188#0" />
+            <element signature="e#1636#3754#0" />
+            <element signature="e#3797#4077#0" />
+            <element signature="e#4117#4221#0" />
+            <element signature="e#4275#4717#0" />
+            <element signature="e#4768#5195#0" />
+            <element signature="e#5258#5745#0" />
+            <element signature="e#5795#6784#0" />
+            <element signature="e#8076#8209#0" />
+            <element signature="e#8262#8390#0" />
+            <element signature="e#8441#8569#0" />
+            <element signature="e#8628#9398#0" />
+            <element signature="e#9455#10002#0" />
+            <element signature="e#10025#10620#0" />
+            <element signature="e#11636#14803#0" />
+            <element signature="e#14829#16145#0" />
+            <element signature="e#16169#17845#0" />
+            <element signature="e#17867#26411#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuddyApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="478" column="41" selection-start-line="478" selection-start-column="41" selection-end-line="478" selection-end-column="41" />
+          <folding>
+            <element signature="e#198#240#0" expanded="true" />
+            <element signature="e#13623#15741#0" />
+            <element signature="e#15784#16064#0" />
+            <element signature="e#16104#16208#0" />
+            <element signature="e#16262#16704#0" />
+            <element signature="e#16755#17182#0" />
+            <element signature="e#17245#17732#0" />
+            <element signature="e#17782#18771#0" />
+            <element signature="e#19353#20017#0" />
+            <element signature="e#20063#20196#0" />
+            <element signature="e#20249#20377#0" />
+            <element signature="e#20428#20556#0" />
+            <element signature="e#20615#21385#0" />
+            <element signature="e#21442#21989#0" />
+            <element signature="e#22185#22780#0" />
+            <element signature="e#23796#26963#0" />
+            <element signature="e#26989#28305#0" />
+            <element signature="e#28329#30005#0" />
+            <element signature="e#30027#36801#0" />
           </folding>
         </state>
       </provider>

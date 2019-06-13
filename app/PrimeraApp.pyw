@@ -29,7 +29,40 @@ class MiVentana(QMainWindow, Ui_MainWindow):
         self.pushButtonAgregarMP.clicked.connect(self.agregar_proceso_memoria_principal)
         self.pushButtonSacarMP.clicked.connect(self.sacar_proceso_memoria_principal)
         self.pushButtonMostrar.clicked.connect(self.mostrar_info_memoria)
-        self.pushButtonInfoVL.clicked.connect(self.mostrar_info_vector_libre)
+        self.pushButtonBL.clicked.connect(self.mostrar_info_bloques_libres)
+        self.pushButtonInfoApp.clicked.connect(self.mostrar_info_buddyapp)
+        self.pushButtonVL.clicked.connect(self.mostrar_info_vector_libre)
+
+    def mostrar_info_buddyapp(self):
+        text = "" \
+               "+----------------------------------------------------+\n" \
+               "|               ¿Que es BuddyApp?                    |\n" \
+               "| Es una app/simulador, que nos permite simular la   |\n" \
+               "| administracion de memoria, utilizando el metodo de |\n" \
+               "| buddy system.                                      |\n" \
+               "| BuddyApp fue desarrollada a modo de trabajo final  |\n" \
+               "| para la catedra de Sistemas Operativos de la       |\n" \
+               "| carrera Ingenieria en Informatica de la facultad   |\n" \
+               "| de Tecnologia y Ciencias Aplicadas de la UNCa.     |\n" \
+               "|                                                    |\n" \
+               "|                   Catedra:                         |\n" \
+               "|              Sistemas Operativos                   |\n" \
+               "|                                                    |\n" \
+               "|               Jefe de Catedra:                     |\n" \
+               "|             Lic. Juan Pablo Moreno                 |\n" \
+               "|                                                    |\n" \
+               "|           Jefe de Trabajos Practicos:              |\n" \
+               "|             Lic. Manuel Baquinzay                  |\n" \
+               "|                                                    |\n" \
+               "|             Integrantes del Grupo:                 |\n" \
+               "|          Flores, Dario Exequiel - 01228            |\n" \
+               "|          Romero, Marcos Gabriel - 01190            |\n" \
+               "|                                                    |\n" \
+               "|                    Año:                            |\n" \
+               "|                    2019                            |\n" \
+               "|                                                    |\n" \
+               "+----------------------------------------------------+\n"
+        self.plainTextEditAcciones.appendPlainText(text)
 
     def closeEvent(self, event):
         resultado = QMessageBox.question(self, "Salir...", "¿Seguro que quieres salir de la aplicacion",
@@ -101,26 +134,31 @@ class MiVentana(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "Formulario incorrecto", "Validación incorrecta", QMessageBox.Discard)
 
     def info_proceso_seleccionado(self):
-        i = self.comboBoxProcesos.currentIndex()
-        proceso = self.listaProcesos.buscarXindice(i)
-        self.labelInfoCabal.setText(proceso.getCabal())
-        self.labelInfoTam.setText(proceso.getTamanio())
-        if proceso.esta_en_memoria_principal():
-            self.pushButtonAgregarMP.setEnabled(False)
-            self.pushButtonSacarMP.setEnabled(True)
-        else:
-            self.pushButtonAgregarMP.setEnabled(True)
-            self.pushButtonSacarMP.setEnabled(False)
+        if len(self.listaProcesos.lista_procesos) != 0:
+            i = self.comboBoxProcesos.currentIndex()
+            proceso = self.listaProcesos.buscarXindice(i)
+            self.labelInfoCabal.setText(proceso.getCabal())
+            self.labelInfoTam.setText(proceso.getTamanio())
+            if proceso.esta_en_memoria_principal():
+                self.pushButtonAgregarMP.setEnabled(False)
+                self.pushButtonSacarMP.setEnabled(True)
+            else:
+                self.pushButtonAgregarMP.setEnabled(True)
+                self.pushButtonSacarMP.setEnabled(False)
 
     def nueva_memoria_principal(self):
         if self.validar_cabal_nuevo_memoria_principal():
+            for p in self.listaProcesos.lista_procesos:
+                p.particion = None
+            if self.memoriaPrincipal is not None:
+                self.info_proceso_seleccionado()
             kval = self.lineEditCabalMemoriaPrincipal.text()
             proceso = Proceso('Libre', kval)
             particion = Particion(kval, proceso, 0, None)
             self.memoriaPrincipal = Memoria(particion)
             text = self.memoriaPrincipal.imprimirMemoria()
             self.plainTextEditAcciones.appendPlainText(text)
-            self.pushButtonNuevaMemoria.setEnabled(False)
+            #self.pushButtonNuevaMemoria.setEnabled(False)
             self.finInstruccion()
             self.lineEditCabalMemoriaPrincipal.clear()
         else:
@@ -131,8 +169,13 @@ class MiVentana(QMainWindow, Ui_MainWindow):
         self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
 
-    def mostrar_info_vector_libre(self):
+    def mostrar_info_bloques_libres(self):
         text = self.memoriaPrincipal.imprimirBL()
+        self.plainTextEditAcciones.appendPlainText(text)
+        self.finInstruccion()
+
+    def mostrar_info_vector_libre(self):
+        text = self.memoriaPrincipal.imprimirVL()
         self.plainTextEditAcciones.appendPlainText(text)
         self.finInstruccion()
 
@@ -225,7 +268,8 @@ class ManejadorProcesos:
             return True
 
     def buscarXindice(self, i):
-        return self.lista_procesos[i]
+        if len(self.lista_procesos) != 0:
+            return self.lista_procesos[i]
 
 
 class Dispo:
@@ -305,9 +349,9 @@ class Dispo:
             print("entra")
             texto = ""
             texto = "DISPO - DIR. COM.: " + str(self.dirCom) + "\n" \
-                    "--+-----" + str(self.primero.particion.direccionComienzo) + "\n"\
-	                "--+-- " + str(self.cabal) + "\n"\
-	                "--+----- " + str(self.primero.particion.direccionComienzo) + "\n"
+                    "--+----- PA: " + str(self.primero.particion.direccionComienzo) + "\n"\
+	                "--+-- KVAL: " + str(self.cabal) + "\n"\
+	                "--+----- PS: " + str(self.primero.particion.direccionComienzo) + "\n"
             validar = True
             temp = self.primero
             while validar:
@@ -538,12 +582,6 @@ class Memoria:
         particionLibre2 = dispo.primero.particion.hijoDerecho
         dispoAnterior.agregar_al_final(particionLibre1)
         dispoAnterior.agregar_al_final(particionLibre2)
-        #bloqueLibre1 = BloqueLibre(particionLibre1, dispoAnterior)          #CREACION DE LOS BLOQUES LIBRES QUE CONTIENEN LAS PARTICIONES LIBRES
-        #bloqueLibre2 = BloqueLibre(particionLibre2, dispoAnterior)
-        #dispoAnterior.primero = bloqueLibre1                       #SE LE ASIGNA A LA DISPO CON MENOR CABAL LOS NUEVOS BLOQUES LIBRES
-        #dispoAnterior.ultimo = bloqueLibre2
-        #bloqueLibre1.ps = bloqueLibre2                        #SE ACTUALIZAN LOS PUNTEROS DE LOS BLOQUES LIBRES DE LA DISPO CON MENOR CABAL
-        #bloqueLibre2.pa = bloqueLibre1
         dispo.eliminarPrimero()                                   #OCUPA EL BLOQUE LIBRE QUE SE DIVIDIO
         self.agregar(proceso)
 
@@ -572,36 +610,6 @@ class Memoria:
                 padre.proceso = Proceso('Libre', int(padre.cabal))
                 dispoMayor.agregar_al_final(padre)
                 self.compactar(padre.padre)
-
-        """
-        particion = proceso.paricion
-        particion.proceso._nombre = 'Libre'
-        particion.proceso.paricion = None
-        if particion.padre is None:
-            print(particion.cabal)
-            dispo = self.buscarDispo_kval(int(particion.cabal))
-            bloqueLibre = BloqueLibre(particion, dispo)
-            dispo.agregar_al_final(bloqueLibre)
-        else:
-            self.compactar(particion)
-
-    def compactar(self, particion):
-        padre = particion.padre
-        dispo = self.buscarDispo_kval(int(padre.cabal))
-        dispoMenor = self.buscarDispo_kval(int(padre.cabal) - 1)
-        if padre.hijoDerecho == self:
-            if padre.hijoIzquierdo.libre():
-                dispoMenor.punteroSiguiente.eliminarBL(padre.hijoIzquierdo)
-                bloqueLibre = BloqueLibre(padre, dispo)
-                dispo.agregar_al_final(bloqueLibre)
-                padre.matarHijos()
-        else:
-            if padre.hijoDerecho.libre():
-                dispoMenor.punteroSiguiente.eliminarBL(padre.hijoDerecho)
-                bloqueLibre = BloqueLibre(padre, dispo)
-                dispo.agregar_al_final(bloqueLibre)
-                padre.matarHijos()
-"""
 
     def imprimirBL(self):
         text = "Bloques Libres:\n"
