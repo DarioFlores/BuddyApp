@@ -1,3 +1,10 @@
 http://www.pyinstaller.org/
 
 https://www.youtube.com/watch?v=qiPS70TSvBk&lc=Ugw_rvQvM69I7CZkicx4AaABAg
+
+Se  ejecuta el comando 
+  pyinstaller BuddyApp.py
+  
+Una vez terminada la ejecucion  en la carpeta  donde esta el .exe tenemos que pegar el archivo Principal.ui
+
+Asi quedaria en funcionamiento  el .exe
