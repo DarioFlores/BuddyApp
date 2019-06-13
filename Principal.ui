@@ -140,7 +140,11 @@
           </widget>
          </item>
          <item row="1" column="1" colspan="2">
-          <widget class="QLineEdit" name="lineNombreProceso"/>
+          <widget class="QLineEdit" name="lineNombreProceso">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_5">
@@ -155,10 +159,17 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="lineTamProceso"/>
+          <widget class="QLineEdit" name="lineTamProceso">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
          <item row="2" column="2">
           <widget class="QPushButton" name="pushButtonAgregarNuevoProceso">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>Agregar</string>
            </property>
@@ -209,6 +220,9 @@
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <widget class="QPushButton" name="pushButtonMostrar">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>Mostrar</string>
              </property>
@@ -305,7 +319,7 @@
          <item row="1" column="1">
           <widget class="QPushButton" name="pushButtonAgregarMP">
            <property name="enabled">
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
            <property name="text">
             <string>Llevar a MP</string>
@@ -314,13 +328,20 @@
          </item>
          <item row="2" column="1">
           <widget class="QPushButton" name="pushButtonSacarMP">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>Llevar a MS</string>
            </property>
           </widget>
          </item>
          <item row="0" column="0" colspan="2">
-          <widget class="QComboBox" name="comboBoxProcesos"/>
+          <widget class="QComboBox" name="comboBoxProcesos">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -352,6 +373,9 @@
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QPushButton" name="pushButtonBL">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>Mostrar Bloques Libres</string>
              </property>
@@ -359,6 +383,9 @@
            </item>
            <item>
             <widget class="QPushButton" name="pushButtonVL">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>Mostrar Vector Libre</string>
              </property>

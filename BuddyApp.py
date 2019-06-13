@@ -114,6 +114,8 @@ class MiVentana(QMainWindow):
             nombre = self.lineNombreProceso.text()
             tam = self.lineTamProceso.text()
             if self.listaProcesos.buscarRepiteNombre(nombre):
+                self.pushButtonAgregarMP.setEnabled(True)
+                self.pushButtonSacarMP.setEnabled(True)
                 self.listaProcesos.agregarProceso(nombre, tam)
                 proceso = self.listaProcesos.ultimoProceso()
                 self.comboBoxProcesos.addItem(proceso.getNombre())
@@ -143,6 +145,13 @@ class MiVentana(QMainWindow):
 
     def nueva_memoria_principal(self):
         if self.validar_cabal_nuevo_memoria_principal():
+            self.pushButtonMostrar.setEnabled(True)
+            self.lineNombreProceso.setEnabled(True)
+            self.lineTamProceso.setEnabled(True)
+            self.pushButtonAgregarNuevoProceso.setEnabled(True)
+            self.comboBoxProcesos.setEnabled(True)
+            self.pushButtonBL.setEnabled(True)
+            self.pushButtonVL.setEnabled(True)
             self.plainTextEditAcciones.clear()
             for p in self.listaProcesos.lista_procesos:
                 p.particion = None

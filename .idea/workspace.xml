@@ -3,8 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="3ddf35be-86c2-4ea9-9a68-e5677bae5126" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimeraApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/BuddyApp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Representacion de BuddyApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Representacion de BuddyApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuddyApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/BuddyApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/BuddyApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/BuddyApp.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/COLLECT-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/COLLECT-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/warn-BuddyApp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/warn-BuddyApp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/BuddyApp/xref-BuddyApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/BuddyApp/xref-BuddyApp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/BuddyApp/BuddyApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/BuddyApp/BuddyApp.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/BuddyApp/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/dist/BuddyApp/Principal.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/BuddyApp/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/dist/BuddyApp/base_library.zip" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,32 +27,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuddyApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="626" column="46" selection-start-line="626" selection-start-column="46" selection-end-line="626" selection-end-column="46" />
+            <state relative-caret-position="54">
+              <caret line="117" column="55" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#1636#3754#0" />
-                <element signature="e#3797#4077#0" />
-                <element signature="e#4117#4221#0" />
-                <element signature="e#4275#4717#0" />
-                <element signature="e#4768#5195#0" />
-                <element signature="e#5258#5745#0" />
-                <element signature="e#5795#6784#0" />
-                <element signature="e#6835#7413#0" />
-                <element signature="e#7462#8317#0" />
-                <element signature="e#8363#8496#0" />
-                <element signature="e#8549#8677#0" />
-                <element signature="e#8728#8856#0" />
-                <element signature="e#8915#9685#0" />
-                <element signature="e#10312#10907#0" />
-                <element signature="e#10939#11995#0" />
-                <element signature="e#12015#15182#0" />
-                <element signature="e#15208#16524#0" />
-                <element signature="e#16548#18224#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Crear archivo .exe.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="11" selection-start-column="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -47,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Representacion de BuddyApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
+            <state relative-caret-position="578">
               <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
             </state>
           </provider>
@@ -84,14 +88,14 @@
         <option value="$PROJECT_DIR$/Representacion de BuddyApp.txt" />
         <option value="$PROJECT_DIR$/app/file.qrc" />
         <option value="$PROJECT_DIR$/app/PrimeraApp.pyw" />
-        <option value="$PROJECT_DIR$/BuddyApp.py" />
         <option value="$PROJECT_DIR$/PrimeraApp.pyw" />
         <option value="$PROJECT_DIR$/Representacion de BuddyApp.py" />
         <option value="$PROJECT_DIR$/PrimeraApp.py" />
+        <option value="$PROJECT_DIR$/BuddyApp.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -101,7 +105,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,6 +121,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,7 +159,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.PrimeraApp.py">
+  <component name="RunManager" selected="Python.BuddyApp">
     <configuration name="BuddyApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,8 +233,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.PrimeraApp.py" />
         <item itemvalue="Python.BuddyApp" />
+        <item itemvalue="Python.PrimeraApp.py" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +268,8 @@
       <workItem from="1560345800519" duration="36000" />
       <workItem from="1560346609766" duration="12671000" />
       <workItem from="1560374770458" duration="8551000" />
-      <workItem from="1560429539892" duration="13817000" />
+      <workItem from="1560429539892" duration="14238000" />
+      <workItem from="1560446932419" duration="1976000" />
     </task>
     <task id="LOCAL-00001" summary="Configurando git">
       <created>1559953102229</created>
@@ -340,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164984000" />
+    <option name="totallyTimeSpent" value="167381000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,14 +357,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16641453" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3500785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.31096563" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.31063122" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40425533" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -368,7 +373,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.32569557" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3371522" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.34219268" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -446,7 +451,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1559829354546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$Principal.coverage" NAME="Principal Coverage Results" MODIFIED="1559004764603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BuddyApp$BuddyApp.coverage" NAME="BuddyApp Coverage Results" MODIFIED="1560434023125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$BuddyApp.coverage" NAME="BuddyApp Coverage Results" MODIFIED="1560448091202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_py.coverage" NAME="PrimeraApp.py Coverage Results" MODIFIED="1560447520344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BuddyApp$PrimeraApp_pyw.coverage" NAME="PrimeraApp.py Coverage Results" MODIFIED="1560444425210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
@@ -474,88 +480,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Representacion de BuddyApp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1636#3754#0" />
-            <element signature="e#3797#4077#0" />
-            <element signature="e#4117#4221#0" />
-            <element signature="e#4275#4717#0" />
-            <element signature="e#4768#5195#0" />
-            <element signature="e#5258#5745#0" />
-            <element signature="e#5795#6784#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/PrimeraApp.exe">
-      <provider selected="true" editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/imgagen_rc.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PrimeraApp.pyw">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="193" column="59" lean-forward="true" selection-start-line="193" selection-start-column="59" selection-end-line="193" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Representacion de BuddyApp.py" />
+    <entry file="file://$PROJECT_DIR$/app/PrimeraApp.pyw" />
+    <entry file="file://$PROJECT_DIR$/dist/PrimeraApp.exe" />
+    <entry file="file://$PROJECT_DIR$/dist/imgagen_rc.py" />
+    <entry file="file://$PROJECT_DIR$/PrimeraApp.pyw" />
     <entry file="file://$PROJECT_DIR$/BuddyApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7990">
-          <caret line="823" column="34" lean-forward="true" selection-start-line="823" selection-start-column="34" selection-end-line="823" selection-end-column="34" />
+        <state relative-caret-position="54">
+          <caret line="117" column="55" selection-start-line="117" selection-start-column="55" selection-end-line="117" selection-end-column="55" />
           <folding>
-            <element signature="e#198#240#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Representacion de BuddyApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
+        <state relative-caret-position="578">
           <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuddyApp.py">
+    <entry file="file://$PROJECT_DIR$/Crear archivo .exe.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="626" column="46" selection-start-line="626" selection-start-column="46" selection-end-line="626" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#1636#3754#0" />
-            <element signature="e#3797#4077#0" />
-            <element signature="e#4117#4221#0" />
-            <element signature="e#4275#4717#0" />
-            <element signature="e#4768#5195#0" />
-            <element signature="e#5258#5745#0" />
-            <element signature="e#5795#6784#0" />
-            <element signature="e#6835#7413#0" />
-            <element signature="e#7462#8317#0" />
-            <element signature="e#8363#8496#0" />
-            <element signature="e#8549#8677#0" />
-            <element signature="e#8728#8856#0" />
-            <element signature="e#8915#9685#0" />
-            <element signature="e#10312#10907#0" />
-            <element signature="e#10939#11995#0" />
-            <element signature="e#12015#15182#0" />
-            <element signature="e#15208#16524#0" />
-            <element signature="e#16548#18224#0" />
-          </folding>
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
