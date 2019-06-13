@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ddf35be-86c2-4ea9-9a68-e5677bae5126" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuddyApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/BuddyApp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuddyApp.spec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Principal.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PrimeraApp.pyw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Representacion de BuddyApp.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/BuddyApp.exe.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PKG-00.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/warn-BuddyApp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/BuddyApp/xref-BuddyApp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/BuddyApp.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/BuddyApp.rar" beforeDir="false" />
-    </list>
+    <list default="true" id="3ddf35be-86c2-4ea9-9a68-e5677bae5126" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/PrimeraApp.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#1636#3754#0" />
@@ -272,7 +253,7 @@
       <workItem from="1560345800519" duration="36000" />
       <workItem from="1560346609766" duration="12671000" />
       <workItem from="1560374770458" duration="8551000" />
-      <workItem from="1560429539892" duration="7343000" />
+      <workItem from="1560429539892" duration="8531000" />
     </task>
     <task id="LOCAL-00001" summary="Configurando git">
       <created>1559953102229</created>
@@ -337,11 +318,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560385183792</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Haciendo unos retoques">
+      <created>1560437686127</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1560437686127</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158510000" />
+    <option name="totallyTimeSpent" value="159698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,7 +349,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890365" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.31096563" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.31096563" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40425533" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -370,7 +358,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.32569557" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3371522" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3371522" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -442,7 +430,8 @@
     <MESSAGE value="Ahora tiene Icono y una Imagen" />
     <MESSAGE value="Imprimi bien todo" />
     <MESSAGE value="Lista para presentar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lista para presentar" />
+    <MESSAGE value="Haciendo unos retoques" />
+    <option name="LAST_COMMIT_MESSAGE" value="Haciendo unos retoques" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$PrimeraApp_pyw.coverage" NAME="PrimeraApp.pyw Coverage Results" MODIFIED="1559829354546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -528,7 +517,7 @@
     <entry file="file://$PROJECT_DIR$/PrimeraApp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#1636#3754#0" />
